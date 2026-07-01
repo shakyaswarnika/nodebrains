@@ -1,0 +1,51 @@
+/**
+ * Badge component styles.
+ *
+ * @package NodeBrains
+ */
+
+.nb-c-badge {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	border-radius: var(--nb-radius-full);
+	font-family: var(--nb-font-sans);
+	font-weight: var(--nb-font-weight-medium);
+	line-height: 1;
+	white-space: nowrap;
+
+	&--size-sm {
+		padding: 0.2rem 0.5rem;
+		font-size: var(--nb-font-size-xs);
+	}
+
+	&--size-md {
+		padding: 0.3rem 0.625rem;
+		font-size: var(--nb-font-size-sm);
+	}
+
+	&--variant-neutral {
+		background-color: var(--nb-color-surface);
+		color: var(--nb-color-text);
+	}
+
+	&--variant-accent {
+		background-color: var(--nb-color-accent);
+		color: var(--nb-color-white);
+	}
+
+	&--variant-success {
+		background-color: #dcfce7;
+		color: #166534;
+	}
+
+	&--variant-warning {
+		background-color: #fef3c7;
+		color: #92400e;
+	}
+
+	&--variant-danger {
+		background-color: #fee2e2;
+		color: #991b1b;
+	}
+}

@@ -1,0 +1,253 @@
+/**
+ * CTA component styles.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Block
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta {
+	--nb-c-cta-bg-color: var(--nb-color-surface);
+	--nb-c-cta-bg-image: none;
+	--nb-c-cta-overlay-color: var(--nb-color-black);
+	--nb-c-cta-overlay-opacity: 0.5;
+
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	margin-block: var(--nb-spacing-md);
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-lg);
+	background-color: var(--nb-c-cta-bg-color);
+	color: var(--nb-color-text);
+}
+
+/* -------------------------------------------------------------------------
+   Width modifiers
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta--width-default {
+	width: 100%;
+}
+
+.nb-c-cta--width-narrow {
+	width: min(100%, var(--nb-container-width-narrow));
+	margin-inline: auto;
+}
+
+.nb-c-cta--width-wide {
+	width: min(100%, var(--nb-container-width-wide));
+	margin-inline: auto;
+}
+
+.nb-c-cta--width-full {
+	width: 100%;
+	max-width: none;
+}
+
+/* -------------------------------------------------------------------------
+   Padding modifiers
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta--padding-none .nb-c-cta__inner {
+	padding: 0;
+}
+
+.nb-c-cta--padding-sm .nb-c-cta__inner {
+	padding: var(--nb-spacing-sm);
+}
+
+.nb-c-cta--padding-md .nb-c-cta__inner {
+	padding: var(--nb-spacing-md);
+}
+
+.nb-c-cta--padding-lg .nb-c-cta__inner {
+	padding: var(--nb-spacing-lg);
+}
+
+.nb-c-cta--padding-xl .nb-c-cta__inner {
+	padding: var(--nb-spacing-xl);
+}
+
+/* -------------------------------------------------------------------------
+   Alignment
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta--align-left .nb-c-cta__content {
+	text-align: left;
+	align-items: flex-start;
+}
+
+.nb-c-cta--align-center .nb-c-cta__content {
+	text-align: center;
+	align-items: center;
+}
+
+.nb-c-cta--align-right .nb-c-cta__content {
+	text-align: right;
+	align-items: flex-end;
+}
+
+.nb-c-cta--align-center .nb-c-cta__actions {
+	justify-content: center;
+}
+
+.nb-c-cta--align-right .nb-c-cta__actions {
+	justify-content: flex-end;
+}
+
+/* -------------------------------------------------------------------------
+   Media / background
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta__media {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-color: var(--nb-c-cta-bg-color);
+	background-image: var(--nb-c-cta-bg-image);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.nb-c-cta__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nb-c-cta--has-image .nb-c-cta__media {
+	background-image: var(--nb-c-cta-bg-image);
+}
+
+.nb-c-cta__overlay {
+	position: absolute;
+	inset: 0;
+	background-color: var(--nb-c-cta-overlay-color);
+	opacity: var(--nb-c-cta-overlay-opacity);
+}
+
+/* -------------------------------------------------------------------------
+   Content
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta__inner {
+	position: relative;
+	z-index: 1;
+}
+
+.nb-c-cta__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--nb-spacing-sm);
+	max-width: 40rem;
+}
+
+.nb-c-cta--align-center .nb-c-cta__content {
+	margin-inline: auto;
+}
+
+.nb-c-cta--align-right .nb-c-cta__content {
+	margin-inline-start: auto;
+}
+
+.nb-c-cta__heading {
+	margin: 0;
+	font-size: var(--nb-font-size-xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+	text-wrap: balance;
+}
+
+.nb-c-cta__description {
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-relaxed);
+	color: var(--nb-color-text-muted);
+	text-wrap: pretty;
+}
+
+.nb-c-cta__description > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-cta__description > :last-child {
+	margin-bottom: 0;
+}
+
+.nb-c-cta__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--nb-spacing-sm);
+	margin-top: var(--nb-spacing-xs);
+}
+
+/* -------------------------------------------------------------------------
+   Reveal animation
+   ------------------------------------------------------------------------- */
+
+.nb-c-cta--reveal {
+	opacity: 0;
+	transform: translateY(1rem);
+	transition:
+		opacity 0.45s ease,
+		transform 0.45s ease;
+}
+
+.nb-c-cta--reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 47.98rem) {
+	.nb-c-cta__heading {
+		font-size: var(--nb-font-size-lg);
+	}
+
+	.nb-c-cta__actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.nb-c-cta__actions .nb-c-button {
+		width: 100%;
+	}
+
+	.nb-c-cta--align-center .nb-c-cta__actions,
+	.nb-c-cta--align-right .nb-c-cta__actions {
+		align-items: stretch;
+	}
+
+	.nb-c-cta--padding-lg .nb-c-cta__inner {
+		padding: var(--nb-spacing-md);
+	}
+
+	.nb-c-cta--padding-xl .nb-c-cta__inner {
+		padding: var(--nb-spacing-lg);
+	}
+}
+
+@media (min-width: 48rem) {
+	.nb-c-cta__heading {
+		font-size: clamp(var(--nb-font-size-lg), 2.5vw, var(--nb-font-size-xl));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nb-c-cta--reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.nb-c-cta__media {
+		background-attachment: scroll;
+	}
+}

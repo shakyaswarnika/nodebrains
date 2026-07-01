@@ -1,0 +1,40 @@
+/**
+ * Search form component styles.
+ *
+ * @package NodeBrains
+ */
+
+.nb-c-search-form {
+	&__label {
+		display: block;
+		margin-bottom: var(--nb-spacing-xs);
+		font-size: var(--nb-font-size-sm);
+		font-weight: var(--nb-font-weight-medium);
+	}
+
+	&__fields {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--nb-spacing-xs);
+	}
+
+	&__input {
+		flex: 1 1 12rem;
+		min-width: 0;
+		padding: 0.625rem 0.75rem;
+		border: 1px solid var(--nb-color-border);
+		border-radius: var(--nb-radius-md);
+		background-color: var(--nb-color-background);
+		color: var(--nb-color-text);
+		font: inherit;
+
+		&:focus-visible {
+			outline: 2px solid var(--nb-color-accent);
+			outline-offset: 1px;
+		}
+	}
+
+	&--variant-inline &__fields {
+		align-items: stretch;
+	}
+}

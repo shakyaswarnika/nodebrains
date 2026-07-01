@@ -1,0 +1,13 @@
+/**
+ * Component library shared settings.
+ *
+ * @package NodeBrains
+ */
+
+$c-prefix: 'nb-c-';
+$breakpoints: (
+	'sm': 36rem,
+	'md': 48rem,
+	'lg': 62rem,
+	'xl': 75rem,
+);

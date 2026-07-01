@@ -27,3 +27,11 @@ if ( ! defined( 'NODEBRAINS_URI' ) ) {
 if ( ! defined( 'NODEBRAINS_BUILDER_PATH' ) ) {
 	define( 'NODEBRAINS_BUILDER_PATH', NODEBRAINS_PATH . '/builder' );
 }
+
+if ( ! defined( 'NODEBRAINS_COMPONENTS_PATH' ) ) {
+	define( 'NODEBRAINS_COMPONENTS_PATH', NODEBRAINS_PATH . '/components' );
+}
+
+if ( ! defined( 'NODEBRAINS_COMPONENTS_URI' ) ) {
+	define( 'NODEBRAINS_COMPONENTS_URI', NODEBRAINS_URI . '/components' );
+}

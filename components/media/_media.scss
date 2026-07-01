@@ -1,0 +1,38 @@
+/**
+ * Media component styles.
+ *
+ * @package NodeBrains
+ */
+
+.nb-c-media {
+	margin: 0;
+
+	&__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: var(--nb-radius-md);
+	}
+
+	&__caption {
+		margin-top: var(--nb-spacing-xs);
+		color: var(--nb-color-text-muted);
+		font-size: var(--nb-font-size-sm);
+		line-height: var(--nb-line-height-normal);
+	}
+
+	&--ratio-16-9 &__image {
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+
+	&--ratio-4-3 &__image {
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+	}
+
+	&--ratio-1-1 &__image {
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+	}
+}

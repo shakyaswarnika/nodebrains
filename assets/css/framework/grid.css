@@ -1,0 +1,366 @@
+/**
+ * NodeBrains framework — grid utilities.
+ *
+ * 12-column CSS grid system with responsive column modifiers.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Grid base
+   ------------------------------------------------------------------------- */
+
+.nb-grid,
+.nb-inline-grid {
+	display: grid;
+	gap: var(--nb-grid-gap);
+	grid-template-columns: repeat(var(--nb-grid-columns), minmax(0, 1fr));
+}
+
+.nb-inline-grid {
+	display: inline-grid;
+}
+
+/* -------------------------------------------------------------------------
+   Column counts
+   ------------------------------------------------------------------------- */
+
+.nb-grid--cols-1 {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.nb-grid--cols-2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.nb-grid--cols-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nb-grid--cols-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.nb-grid--cols-5 {
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.nb-grid--cols-6 {
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.nb-grid--cols-7 {
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.nb-grid--cols-8 {
+	grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.nb-grid--cols-9 {
+	grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.nb-grid--cols-10 {
+	grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.nb-grid--cols-11 {
+	grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.nb-grid--cols-12 {
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* -------------------------------------------------------------------------
+   Gap modifiers
+   ------------------------------------------------------------------------- */
+
+.nb-grid--gap-none {
+	gap: var(--nb-spacing-none);
+}
+
+.nb-grid--gap-sm {
+	gap: var(--nb-grid-gap-sm);
+}
+
+.nb-grid--gap-md {
+	gap: var(--nb-grid-gap);
+}
+
+.nb-grid--gap-lg {
+	gap: var(--nb-grid-gap-lg);
+}
+
+/* -------------------------------------------------------------------------
+   Column span
+   ------------------------------------------------------------------------- */
+
+.nb-col-span-1 {
+	grid-column: span 1 / span 1;
+}
+
+.nb-col-span-2 {
+	grid-column: span 2 / span 2;
+}
+
+.nb-col-span-3 {
+	grid-column: span 3 / span 3;
+}
+
+.nb-col-span-4 {
+	grid-column: span 4 / span 4;
+}
+
+.nb-col-span-5 {
+	grid-column: span 5 / span 5;
+}
+
+.nb-col-span-6 {
+	grid-column: span 6 / span 6;
+}
+
+.nb-col-span-7 {
+	grid-column: span 7 / span 7;
+}
+
+.nb-col-span-8 {
+	grid-column: span 8 / span 8;
+}
+
+.nb-col-span-9 {
+	grid-column: span 9 / span 9;
+}
+
+.nb-col-span-10 {
+	grid-column: span 10 / span 10;
+}
+
+.nb-col-span-11 {
+	grid-column: span 11 / span 11;
+}
+
+.nb-col-span-12 {
+	grid-column: span 12 / span 12;
+}
+
+.nb-col-span-full {
+	grid-column: 1 / -1;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive columns — small (36rem+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 36rem) {
+	.nb-grid--sm-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
+	.nb-grid--sm-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.nb-grid--sm-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.nb-grid--sm-cols-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.nb-grid--sm-cols-6 {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.nb-grid--sm-cols-12 {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+
+	.nb-col-sm-span-1 {
+		grid-column: span 1 / span 1;
+	}
+
+	.nb-col-sm-span-2 {
+		grid-column: span 2 / span 2;
+	}
+
+	.nb-col-sm-span-3 {
+		grid-column: span 3 / span 3;
+	}
+
+	.nb-col-sm-span-4 {
+		grid-column: span 4 / span 4;
+	}
+
+	.nb-col-sm-span-6 {
+		grid-column: span 6 / span 6;
+	}
+
+	.nb-col-sm-span-12 {
+		grid-column: span 12 / span 12;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   Responsive columns — medium (48rem+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 48rem) {
+	.nb-grid--md-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
+	.nb-grid--md-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.nb-grid--md-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.nb-grid--md-cols-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.nb-grid--md-cols-6 {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.nb-grid--md-cols-12 {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+
+	.nb-col-md-span-1 {
+		grid-column: span 1 / span 1;
+	}
+
+	.nb-col-md-span-2 {
+		grid-column: span 2 / span 2;
+	}
+
+	.nb-col-md-span-3 {
+		grid-column: span 3 / span 3;
+	}
+
+	.nb-col-md-span-4 {
+		grid-column: span 4 / span 4;
+	}
+
+	.nb-col-md-span-6 {
+		grid-column: span 6 / span 6;
+	}
+
+	.nb-col-md-span-8 {
+		grid-column: span 8 / span 8;
+	}
+
+	.nb-col-md-span-12 {
+		grid-column: span 12 / span 12;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   Responsive columns — large (62rem+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 62rem) {
+	.nb-grid--lg-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.nb-grid--lg-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.nb-grid--lg-cols-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.nb-grid--lg-cols-6 {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.nb-grid--lg-cols-12 {
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+	}
+
+	.nb-col-lg-span-3 {
+		grid-column: span 3 / span 3;
+	}
+
+	.nb-col-lg-span-4 {
+		grid-column: span 4 / span 4;
+	}
+
+	.nb-col-lg-span-6 {
+		grid-column: span 6 / span 6;
+	}
+
+	.nb-col-lg-span-8 {
+		grid-column: span 8 / span 8;
+	}
+
+	.nb-col-lg-span-9 {
+		grid-column: span 9 / span 9;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   Responsive columns — extra large (75rem+)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 75rem) {
+	.nb-grid--xl-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.nb-grid--xl-cols-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.nb-grid--xl-cols-6 {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.nb-col-xl-span-4 {
+		grid-column: span 4 / span 4;
+	}
+
+	.nb-col-xl-span-6 {
+		grid-column: span 6 / span 6;
+	}
+
+	.nb-col-xl-span-8 {
+		grid-column: span 8 / span 8;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   Alignment
+   ------------------------------------------------------------------------- */
+
+.nb-grid--align-start {
+	align-items: start;
+}
+
+.nb-grid--align-center {
+	align-items: center;
+}
+
+.nb-grid--align-end {
+	align-items: end;
+}
+
+.nb-grid--align-stretch {
+	align-items: stretch;
+}
+
+.nb-grid--justify-center {
+	justify-items: center;
+}
+
+.nb-grid--justify-stretch {
+	justify-items: stretch;
+}

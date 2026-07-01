@@ -1,0 +1,46 @@
+/**
+ * Link component styles.
+ *
+ * @package NodeBrains
+ */
+
+@use '../mixins' as *;
+
+.nb-c-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: var(--nb-color-accent);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+
+	@include focus-ring;
+
+	&:hover,
+	&:focus-visible {
+		color: var(--nb-color-accent-hover);
+	}
+
+	&--variant-muted {
+		color: var(--nb-color-text-muted);
+
+		&:hover,
+		&:focus-visible {
+			color: var(--nb-color-text);
+		}
+	}
+
+	&--variant-plain {
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			text-decoration: underline;
+		}
+	}
+
+	&__icon {
+		font-size: 0.875em;
+		line-height: 1;
+	}
+}

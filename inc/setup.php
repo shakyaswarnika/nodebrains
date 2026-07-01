@@ -31,10 +31,6 @@ function bootstrap(): void {
 function configure_theme(): void {
 	load_theme_textdomain( 'nodebrains', NODEBRAINS_PATH . '/languages' );
 
-	if ( ! isset( $GLOBALS['content_width'] ) ) {
-		$GLOBALS['content_width'] = 1200;
-	}
-
 	require NODEBRAINS_PATH . '/inc/theme-support.php';
 
 	\NodeBrains\ThemeSupport\register();

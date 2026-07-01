@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require get_template_directory() . '/inc/constants.php';
+require NODEBRAINS_PATH . '/inc/framework/bootstrap.php';
+require NODEBRAINS_PATH . '/inc/components/bootstrap.php';
 require NODEBRAINS_PATH . '/inc/setup.php';
 require NODEBRAINS_PATH . '/inc/enqueue.php';
 require NODEBRAINS_PATH . '/inc/menus.php';

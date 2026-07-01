@@ -1,0 +1,201 @@
+/**
+ * NodeBrains framework — typography utilities.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Base text
+   ------------------------------------------------------------------------- */
+
+.nb-text {
+	font-family: var(--nb-font-sans);
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-normal);
+	font-weight: var(--nb-font-weight-normal);
+}
+
+.nb-text--muted {
+	color: var(--nb-color-text-muted);
+}
+
+/* -------------------------------------------------------------------------
+   Font sizes
+   ------------------------------------------------------------------------- */
+
+.nb-text--xs,
+.nb-text--size-xs {
+	font-size: var(--nb-font-size-xs);
+}
+
+.nb-text--sm,
+.nb-text--size-sm {
+	font-size: var(--nb-font-size-sm);
+}
+
+.nb-text--base,
+.nb-text--size-base {
+	font-size: var(--nb-font-size-base);
+}
+
+.nb-text--md,
+.nb-text--size-md {
+	font-size: var(--nb-font-size-md);
+}
+
+.nb-text--lg,
+.nb-text--size-lg {
+	font-size: var(--nb-font-size-lg);
+}
+
+.nb-text--xl,
+.nb-text--size-xl {
+	font-size: var(--nb-font-size-xl);
+}
+
+.nb-text--2xl,
+.nb-text--size-2xl {
+	font-size: var(--nb-font-size-2xl);
+}
+
+.nb-text--3xl,
+.nb-text--size-3xl {
+	font-size: var(--nb-font-size-3xl);
+}
+
+/* -------------------------------------------------------------------------
+   Font weights
+   ------------------------------------------------------------------------- */
+
+.nb-text--weight-normal {
+	font-weight: var(--nb-font-weight-normal);
+}
+
+.nb-text--weight-medium {
+	font-weight: var(--nb-font-weight-medium);
+}
+
+.nb-text--weight-semibold {
+	font-weight: var(--nb-font-weight-semibold);
+}
+
+.nb-text--weight-bold {
+	font-weight: var(--nb-font-weight-bold);
+}
+
+/* -------------------------------------------------------------------------
+   Line heights
+   ------------------------------------------------------------------------- */
+
+.nb-text--leading-tight {
+	line-height: var(--nb-line-height-tight);
+}
+
+.nb-text--leading-normal {
+	line-height: var(--nb-line-height-normal);
+}
+
+.nb-text--leading-relaxed {
+	line-height: var(--nb-line-height-relaxed);
+}
+
+/* -------------------------------------------------------------------------
+   Font families
+   ------------------------------------------------------------------------- */
+
+.nb-text--family-sans,
+.nb-font-sans {
+	font-family: var(--nb-font-sans);
+}
+
+.nb-text--family-mono,
+.nb-font-mono {
+	font-family: var(--nb-font-mono);
+}
+
+/* -------------------------------------------------------------------------
+   Semantic headings
+   ------------------------------------------------------------------------- */
+
+.nb-h1,
+.nb-heading-1 {
+	margin-block: 0;
+	font-size: var(--nb-font-size-3xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+}
+
+.nb-h2,
+.nb-heading-2 {
+	margin-block: 0;
+	font-size: var(--nb-font-size-2xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+}
+
+.nb-h3,
+.nb-heading-3 {
+	margin-block: 0;
+	font-size: var(--nb-font-size-xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-semibold);
+}
+
+.nb-h4,
+.nb-heading-4 {
+	margin-block: 0;
+	font-size: var(--nb-font-size-lg);
+	line-height: var(--nb-line-height-normal);
+	font-weight: var(--nb-font-weight-semibold);
+}
+
+.nb-h5,
+.nb-heading-5 {
+	margin-block: 0;
+	font-size: var(--nb-font-size-md);
+	line-height: var(--nb-line-height-normal);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+.nb-h6,
+.nb-heading-6 {
+	margin-block: 0;
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-normal);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+/* -------------------------------------------------------------------------
+   Text alignment & transform
+   ------------------------------------------------------------------------- */
+
+.nb-text-left {
+	text-align: left;
+}
+
+.nb-text-center {
+	text-align: center;
+}
+
+.nb-text-right {
+	text-align: right;
+}
+
+.nb-uppercase {
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.nb-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.nb-balance {
+	text-wrap: balance;
+}
+
+.nb-pretty {
+	text-wrap: pretty;
+}

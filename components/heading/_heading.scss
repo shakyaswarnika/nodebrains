@@ -1,0 +1,47 @@
+/**
+ * Heading component styles.
+ *
+ * @package NodeBrains
+ */
+
+.nb-c-heading {
+	margin: 0;
+	font-family: var(--nb-font-sans);
+	color: var(--nb-color-text);
+
+	&--h1 {
+		font-size: var(--nb-font-size-3xl);
+		line-height: var(--nb-line-height-tight);
+		font-weight: var(--nb-font-weight-bold);
+	}
+
+	&--h2 {
+		font-size: var(--nb-font-size-2xl);
+		line-height: var(--nb-line-height-tight);
+		font-weight: var(--nb-font-weight-bold);
+	}
+
+	&--h3 {
+		font-size: var(--nb-font-size-xl);
+		line-height: var(--nb-line-height-tight);
+		font-weight: var(--nb-font-weight-semibold);
+	}
+
+	&--h4 {
+		font-size: var(--nb-font-size-lg);
+		line-height: var(--nb-line-height-normal);
+		font-weight: var(--nb-font-weight-semibold);
+	}
+
+	&--h5 {
+		font-size: var(--nb-font-size-md);
+		line-height: var(--nb-line-height-normal);
+		font-weight: var(--nb-font-weight-medium);
+	}
+
+	&--h6 {
+		font-size: var(--nb-font-size-sm);
+		line-height: var(--nb-line-height-normal);
+		font-weight: var(--nb-font-weight-medium);
+	}
+}

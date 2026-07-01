@@ -83,15 +83,15 @@ function the_primary_navigation(): void {
 		return;
 	}
 
-	wp_nav_menu(
+	nodebrains_component(
+		'nav',
 		array(
-			'theme_location'       => 'primary',
-			'menu_id'              => 'primary-menu',
-			'menu_class'           => 'primary-menu',
-			'container'            => 'nav',
-			'container_class'      => 'primary-navigation',
-			'container_aria_label' => esc_attr__( 'Primary', 'nodebrains' ),
-			'fallback_cb'          => false,
+			'label'     => __( 'Primary', 'nodebrains' ),
+			'collapse'  => 'lg',
+			'menu_args' => array(
+				'theme_location' => 'primary',
+				'menu_id'        => 'primary-menu',
+			),
 		)
 	);
 }

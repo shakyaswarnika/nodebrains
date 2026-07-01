@@ -1,0 +1,269 @@
+/**
+ * Hero component styles.
+ *
+ * Uses NodeBrains design tokens via CSS custom properties.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Block
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero {
+	--nb-c-hero-bg-color: var(--nb-color-surface);
+	--nb-c-hero-bg-image: none;
+	--nb-c-hero-overlay-color: var(--nb-color-black);
+	--nb-c-hero-overlay-opacity: 0.55;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	isolation: isolate;
+	overflow: hidden;
+	min-height: clamp(20rem, 50vh, 32rem);
+	padding-block: var(--nb-spacing-xl);
+	color: var(--nb-color-text);
+	background-color: var(--nb-c-hero-bg-color);
+}
+
+/* -------------------------------------------------------------------------
+   Height modifiers
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero--height-sm {
+	min-height: clamp(16rem, 40vh, 24rem);
+	padding-block: var(--nb-spacing-lg);
+}
+
+.nb-c-hero--height-md {
+	min-height: clamp(20rem, 50vh, 32rem);
+}
+
+.nb-c-hero--height-lg {
+	min-height: clamp(24rem, 65vh, 40rem);
+}
+
+.nb-c-hero--height-full {
+	min-height: 100vh;
+	min-height: 100dvh;
+}
+
+/* -------------------------------------------------------------------------
+   Alignment modifiers
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero--align-left .nb-c-hero__content {
+	text-align: left;
+	align-items: flex-start;
+}
+
+.nb-c-hero--align-center .nb-c-hero__content {
+	text-align: center;
+	align-items: center;
+}
+
+.nb-c-hero--align-right .nb-c-hero__content {
+	text-align: right;
+	align-items: flex-end;
+}
+
+.nb-c-hero--align-center .nb-c-hero__actions,
+.nb-c-hero--align-right .nb-c-hero__actions {
+	justify-content: center;
+}
+
+.nb-c-hero--align-right .nb-c-hero__actions {
+	justify-content: flex-end;
+}
+
+/* -------------------------------------------------------------------------
+   Media / background
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero__media {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-color: var(--nb-c-hero-bg-color);
+	background-image: var(--nb-c-hero-bg-image);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.nb-c-hero__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nb-c-hero--has-image .nb-c-hero__media {
+	background-image: var(--nb-c-hero-bg-image);
+}
+
+.nb-c-hero__overlay {
+	position: absolute;
+	inset: 0;
+	background-color: var(--nb-c-hero-overlay-color);
+	opacity: var(--nb-c-hero-overlay-opacity);
+}
+
+/* -------------------------------------------------------------------------
+   Inner layout
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero__container {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+.nb-c-hero__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--nb-spacing-sm);
+	max-width: 48rem;
+}
+
+.nb-c-hero--align-center .nb-c-hero__content {
+	margin-inline: auto;
+}
+
+.nb-c-hero--align-right .nb-c-hero__content {
+	margin-inline-start: auto;
+}
+
+/* -------------------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero__subtitle {
+	margin: 0;
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-sm);
+	font-weight: var(--nb-font-weight-semibold);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.nb-c-hero__title {
+	margin: 0;
+	font-size: var(--nb-font-size-3xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+	text-wrap: balance;
+}
+
+.nb-c-hero__description {
+	font-size: var(--nb-font-size-md);
+	line-height: var(--nb-line-height-relaxed);
+	color: var(--nb-color-text-muted);
+	text-wrap: pretty;
+}
+
+.nb-c-hero__description > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-hero__description > :last-child {
+	margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Actions
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--nb-spacing-sm);
+	margin-top: var(--nb-spacing-sm);
+}
+
+/* -------------------------------------------------------------------------
+   Breadcrumb
+   ------------------------------------------------------------------------- */
+
+.nb-c-hero__breadcrumb {
+	margin-bottom: var(--nb-spacing-xs);
+	font-size: var(--nb-font-size-sm);
+}
+
+.nb-c-hero__breadcrumb-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nb-c-hero__breadcrumb-item {
+	display: inline-flex;
+	align-items: center;
+	color: var(--nb-color-text-muted);
+}
+
+.nb-c-hero__breadcrumb-item:not(:last-child)::after {
+	content: '/';
+	margin-inline-start: 0.35rem;
+	color: var(--nb-color-border);
+}
+
+.nb-c-hero__breadcrumb-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.nb-c-hero__breadcrumb-link:hover,
+.nb-c-hero__breadcrumb-link:focus-visible {
+	color: var(--nb-color-accent);
+	text-decoration: underline;
+}
+
+.nb-c-hero__breadcrumb-current {
+	color: var(--nb-color-text);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 47.98rem) {
+	.nb-c-hero__title {
+		font-size: var(--nb-font-size-2xl);
+	}
+
+	.nb-c-hero__description {
+		font-size: var(--nb-font-size-base);
+	}
+
+	.nb-c-hero__actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.nb-c-hero__actions .nb-c-button {
+		width: 100%;
+	}
+
+	.nb-c-hero--align-center .nb-c-hero__actions,
+	.nb-c-hero--align-right .nb-c-hero__actions {
+		align-items: stretch;
+	}
+}
+
+@media (min-width: 48rem) {
+	.nb-c-hero__title {
+		font-size: clamp(var(--nb-font-size-2xl), 4vw, var(--nb-font-size-3xl));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nb-c-hero__media {
+		background-attachment: scroll;
+	}
+}

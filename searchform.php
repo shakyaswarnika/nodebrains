@@ -10,22 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$unique_id = wp_unique_id( 'search-form-' );
-?>
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label class="screen-reader-text" for="<?php echo esc_attr( $unique_id ); ?>">
-		<?php esc_html_e( 'Search for:', 'nodebrains' ); ?>
-	</label>
-	<input
-		type="search"
-		id="<?php echo esc_attr( $unique_id ); ?>"
-		class="search-field"
-		placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'nodebrains' ); ?>"
-		value="<?php echo esc_attr( get_search_query() ); ?>"
-		name="s"
-	>
-	<button type="submit" class="search-submit">
-		<span class="screen-reader-text"><?php esc_html_e( 'Search', 'nodebrains' ); ?></span>
-		<?php esc_html_e( 'Search', 'nodebrains' ); ?>
-	</button>
-</form>
+nodebrains_component(
+	'search-form',
+	array(
+		'label'          => __( 'Search for:', 'nodebrains' ),
+		'label_hidden'   => true,
+		'placeholder'    => esc_attr_x( 'Search &hellip;', 'placeholder', 'nodebrains' ),
+		'button_text'    => __( 'Search', 'nodebrains' ),
+		'button_sr_text' => __( 'Search', 'nodebrains' ),
+		'value'          => get_search_query(),
+	)
+);

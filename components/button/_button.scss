@@ -1,0 +1,91 @@
+/**
+ * Button component styles.
+ *
+ * @package NodeBrains
+ */
+
+@use '../mixins' as *;
+
+.nb-c-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--nb-spacing-xs);
+	padding: 0.625rem 1.125rem;
+	border: 1px solid transparent;
+	border-radius: var(--nb-radius-md);
+	font-family: var(--nb-font-sans);
+	font-size: var(--nb-font-size-base);
+	font-weight: var(--nb-font-weight-medium);
+	line-height: var(--nb-line-height-tight);
+	text-decoration: none;
+	cursor: pointer;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
+
+	@include focus-ring;
+
+	&--block {
+		width: 100%;
+	}
+
+	&--size-sm {
+		padding: 0.5rem 0.875rem;
+		font-size: var(--nb-font-size-sm);
+	}
+
+	&--size-lg {
+		padding: 0.75rem 1.375rem;
+		font-size: var(--nb-font-size-md);
+	}
+
+	&--variant-primary {
+		background-color: var(--nb-color-accent);
+		border-color: var(--nb-color-accent);
+		color: var(--nb-color-white);
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--nb-color-accent-hover);
+			border-color: var(--nb-color-accent-hover);
+			color: var(--nb-color-white);
+		}
+	}
+
+	&--variant-secondary {
+		background-color: var(--nb-color-surface);
+		border-color: var(--nb-color-border);
+		color: var(--nb-color-text);
+
+		&:hover,
+		&:focus-visible {
+			border-color: var(--nb-color-accent);
+			color: var(--nb-color-accent);
+		}
+	}
+
+	&--variant-ghost {
+		background-color: transparent;
+		border-color: transparent;
+		color: var(--nb-color-accent);
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--nb-color-surface);
+		}
+	}
+
+	&[aria-disabled='true'],
+	&:disabled {
+		opacity: 0.55;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	&__icon {
+		display: inline-flex;
+		flex-shrink: 0;
+	}
+}

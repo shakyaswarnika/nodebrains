@@ -40,7 +40,12 @@ function enqueue_styles(): void {
 	wp_enqueue_style(
 		'nodebrains-main',
 		NODEBRAINS_URI . '/assets/css/main.css',
-		array(),
+		array(
+			'nodebrains-components',
+			'nodebrains-framework-layout',
+			'nodebrains-framework-grid',
+			'nodebrains-framework-type',
+		),
 		\NodeBrains\Helpers\get_asset_version( 'assets/css/main.css' )
 	);
 }

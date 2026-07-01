@@ -1,0 +1,74 @@
+/**
+ * Alert component styles.
+ *
+ * @package NodeBrains
+ */
+
+@use '../mixins' as *;
+
+.nb-c-alert {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--nb-spacing-sm);
+	padding: var(--nb-spacing-sm) var(--nb-spacing-md);
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-md);
+
+	&--variant-info {
+		border-color: #bfdbfe;
+		background-color: #eff6ff;
+		color: #1e3a8a;
+	}
+
+	&--variant-success {
+		border-color: #bbf7d0;
+		background-color: #f0fdf4;
+		color: #166534;
+	}
+
+	&--variant-warning {
+		border-color: #fde68a;
+		background-color: #fffbeb;
+		color: #92400e;
+	}
+
+	&--variant-danger {
+		border-color: #fecaca;
+		background-color: #fef2f2;
+		color: #991b1b;
+	}
+
+	&__title {
+		margin: 0 0 0.25rem;
+		font-weight: var(--nb-font-weight-semibold);
+	}
+
+	&__message {
+		> :first-child {
+			margin-top: 0;
+		}
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	&__dismiss {
+		@include interactive-reset;
+		@include focus-ring;
+
+		flex-shrink: 0;
+		padding: 0.25rem;
+		font-size: var(--nb-font-size-lg);
+		line-height: 1;
+	}
+}
+
+.nb-c-alert.is-dismissed {
+	display: none;
+}

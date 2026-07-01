@@ -5,31 +5,8 @@
  */
 
 /* -------------------------------------------------------------------------
-   CSS Custom Properties
-   ------------------------------------------------------------------------- */
-
-:root {
-	--nb-color-text: #1a1a1a;
-	--nb-color-text-muted: #5c5c5c;
-	--nb-color-background: #ffffff;
-	--nb-color-surface: #f5f5f5;
-	--nb-color-border: #e2e2e2;
-	--nb-color-accent: #2563eb;
-	--nb-color-accent-hover: #1d4ed8;
-	--nb-font-sans:
-		system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-	--nb-font-size-base: 1rem;
-	--nb-line-height: 1.6;
-	--nb-container-width: 72rem;
-	--nb-spacing-xs: 0.5rem;
-	--nb-spacing-sm: 1rem;
-	--nb-spacing-md: 1.5rem;
-	--nb-spacing-lg: 2.5rem;
-	--nb-spacing-xl: 4rem;
-}
-
-/* -------------------------------------------------------------------------
    Base
+   Design tokens are output as :root CSS custom properties by the framework.
    ------------------------------------------------------------------------- */
 
 *,
@@ -52,7 +29,7 @@ body {
 	margin: 0;
 	font-family: var(--nb-font-sans);
 	font-size: var(--nb-font-size-base);
-	line-height: var(--nb-line-height);
+	line-height: var(--nb-line-height-normal);
 	color: var(--nb-color-text);
 	background-color: var(--nb-color-background);
 }
@@ -77,11 +54,6 @@ a:focus {
 /* -------------------------------------------------------------------------
    Layout
    ------------------------------------------------------------------------- */
-
-.container {
-	width: min(100% - 2rem, var(--nb-container-width));
-	margin-inline: auto;
-}
 
 .site-main {
 	padding-block: var(--nb-spacing-lg);

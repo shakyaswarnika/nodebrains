@@ -1,0 +1,271 @@
+/**
+ * NodeBrains framework — layout utilities.
+ *
+ * Container classes, stacks, clusters, and section wrappers.
+ * Consumes CSS custom properties output by the design token system.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Containers
+   ------------------------------------------------------------------------- */
+
+.nb-container,
+.container {
+	width: min(100% - (var(--nb-container-padding) * 2), var(--nb-container-width));
+	margin-inline: auto;
+}
+
+.nb-container--narrow {
+	width: min(100% - (var(--nb-container-padding) * 2), var(--nb-container-width-narrow));
+}
+
+.nb-container--wide {
+	width: min(100% - (var(--nb-container-padding) * 2), var(--nb-container-width-wide));
+}
+
+.nb-container--fluid {
+	width: calc(100% - (var(--nb-container-padding) * 2));
+	max-width: none;
+}
+
+.nb-container--full {
+	width: 100%;
+	max-width: none;
+	margin-inline: 0;
+}
+
+.nb-container--uncentered {
+	margin-inline: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Sections
+   ------------------------------------------------------------------------- */
+
+.nb-section {
+	padding-block: var(--nb-section-spacing);
+}
+
+.nb-section--spacing-sm {
+	padding-block: var(--nb-spacing-sm);
+}
+
+.nb-section--spacing-md {
+	padding-block: var(--nb-spacing-md);
+}
+
+.nb-section--spacing-lg {
+	padding-block: var(--nb-spacing-lg);
+}
+
+.nb-section--spacing-xl {
+	padding-block: var(--nb-spacing-xl);
+}
+
+.nb-section--surface {
+	background-color: var(--nb-color-surface);
+}
+
+.nb-section--bordered {
+	border-block: 1px solid var(--nb-color-border);
+}
+
+/* -------------------------------------------------------------------------
+   Stack (vertical flex)
+   ------------------------------------------------------------------------- */
+
+.nb-stack {
+	display: flex;
+	flex-direction: column;
+}
+
+.nb-stack--gap-none {
+	gap: var(--nb-spacing-none);
+}
+
+.nb-stack--gap-xs {
+	gap: var(--nb-spacing-xs);
+}
+
+.nb-stack--gap-sm {
+	gap: var(--nb-spacing-sm);
+}
+
+.nb-stack--gap-md {
+	gap: var(--nb-spacing-md);
+}
+
+.nb-stack--gap-lg {
+	gap: var(--nb-spacing-lg);
+}
+
+.nb-stack--gap-xl {
+	gap: var(--nb-spacing-xl);
+}
+
+.nb-stack--align-start {
+	align-items: flex-start;
+}
+
+.nb-stack--align-center {
+	align-items: center;
+}
+
+.nb-stack--align-end {
+	align-items: flex-end;
+}
+
+.nb-stack--align-stretch {
+	align-items: stretch;
+}
+
+/* -------------------------------------------------------------------------
+   Cluster (horizontal flex wrap)
+   ------------------------------------------------------------------------- */
+
+.nb-cluster {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nb-cluster--gap-none {
+	gap: var(--nb-spacing-none);
+}
+
+.nb-cluster--gap-xs {
+	gap: var(--nb-spacing-xs);
+}
+
+.nb-cluster--gap-sm {
+	gap: var(--nb-spacing-sm);
+}
+
+.nb-cluster--gap-md {
+	gap: var(--nb-spacing-md);
+}
+
+.nb-cluster--gap-lg {
+	gap: var(--nb-spacing-lg);
+}
+
+.nb-cluster--gap-xl {
+	gap: var(--nb-spacing-xl);
+}
+
+.nb-cluster--justify-start {
+	justify-content: flex-start;
+}
+
+.nb-cluster--justify-center {
+	justify-content: center;
+}
+
+.nb-cluster--justify-end {
+	justify-content: flex-end;
+}
+
+.nb-cluster--justify-between {
+	justify-content: space-between;
+}
+
+.nb-cluster--justify-around {
+	justify-content: space-around;
+}
+
+.nb-cluster--align-start {
+	align-items: flex-start;
+}
+
+.nb-cluster--align-center {
+	align-items: center;
+}
+
+.nb-cluster--align-end {
+	align-items: flex-end;
+}
+
+.nb-cluster--align-stretch {
+	align-items: stretch;
+}
+
+/* -------------------------------------------------------------------------
+   Spacing utilities
+   ------------------------------------------------------------------------- */
+
+.nb-m-0 {
+	margin: var(--nb-spacing-none);
+}
+
+.nb-mt-sm {
+	margin-block-start: var(--nb-spacing-sm);
+}
+
+.nb-mb-sm {
+	margin-block-end: var(--nb-spacing-sm);
+}
+
+.nb-my-md {
+	margin-block: var(--nb-spacing-md);
+}
+
+.nb-p-sm {
+	padding: var(--nb-spacing-sm);
+}
+
+.nb-p-md {
+	padding: var(--nb-spacing-md);
+}
+
+.nb-p-lg {
+	padding: var(--nb-spacing-lg);
+}
+
+.nb-px-container {
+	padding-inline: var(--nb-container-padding);
+}
+
+/* -------------------------------------------------------------------------
+   Display utilities
+   ------------------------------------------------------------------------- */
+
+.nb-hidden {
+	display: none;
+}
+
+.nb-block {
+	display: block;
+}
+
+.nb-flex {
+	display: flex;
+}
+
+.nb-inline-flex {
+	display: inline-flex;
+}
+
+.nb-w-full {
+	width: 100%;
+}
+
+.nb-max-w-content {
+	max-width: var(--nb-container-width);
+}
+
+.nb-mx-auto {
+	margin-inline: auto;
+}
+
+.nb-sr-only {
+	border: 0;
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+}

@@ -1,0 +1,276 @@
+/**
+ * Banner component styles.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Block
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner {
+	--nb-c-banner-bg-color: var(--nb-color-surface);
+	--nb-c-banner-bg-image: none;
+	--nb-c-banner-overlay-color: var(--nb-color-black);
+	--nb-c-banner-overlay-opacity: 0.45;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	isolation: isolate;
+	overflow: hidden;
+	min-height: clamp(10rem, 28vh, 16rem);
+	padding-block: var(--nb-spacing-lg);
+	color: var(--nb-color-text);
+	background-color: var(--nb-c-banner-bg-color);
+}
+
+/* -------------------------------------------------------------------------
+   Height modifiers
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner--height-sm {
+	min-height: clamp(8rem, 20vh, 12rem);
+	padding-block: var(--nb-spacing-md);
+}
+
+.nb-c-banner--height-md {
+	min-height: clamp(10rem, 28vh, 16rem);
+}
+
+.nb-c-banner--height-lg {
+	min-height: clamp(12rem, 36vh, 20rem);
+	padding-block: var(--nb-spacing-xl);
+}
+
+/* -------------------------------------------------------------------------
+   Alignment
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner--align-left .nb-c-banner__content {
+	text-align: left;
+	align-items: flex-start;
+}
+
+.nb-c-banner--align-center .nb-c-banner__content {
+	text-align: center;
+	align-items: center;
+}
+
+.nb-c-banner--align-right .nb-c-banner__content {
+	text-align: right;
+	align-items: flex-end;
+}
+
+.nb-c-banner--align-center .nb-c-banner__actions {
+	justify-content: center;
+}
+
+.nb-c-banner--align-right .nb-c-banner__actions {
+	justify-content: flex-end;
+}
+
+/* -------------------------------------------------------------------------
+   Media
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner__media {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-color: var(--nb-c-banner-bg-color);
+	background-image: var(--nb-c-banner-bg-image);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.nb-c-banner__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nb-c-banner--has-image .nb-c-banner__media {
+	background-image: var(--nb-c-banner-bg-image);
+}
+
+.nb-c-banner__overlay {
+	position: absolute;
+	inset: 0;
+	background-color: var(--nb-c-banner-overlay-color);
+	opacity: var(--nb-c-banner-overlay-opacity);
+}
+
+/* -------------------------------------------------------------------------
+   Content
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner__container {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+.nb-c-banner__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--nb-spacing-sm);
+	max-width: 42rem;
+}
+
+.nb-c-banner--align-center .nb-c-banner__content {
+	margin-inline: auto;
+}
+
+.nb-c-banner--align-right .nb-c-banner__content {
+	margin-inline-start: auto;
+}
+
+.nb-c-banner__heading {
+	margin: 0;
+	font-size: var(--nb-font-size-2xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+	text-wrap: balance;
+}
+
+.nb-c-banner__description {
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-relaxed);
+	color: var(--nb-color-text-muted);
+	text-wrap: pretty;
+}
+
+.nb-c-banner__description > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-banner__description > :last-child {
+	margin-bottom: 0;
+}
+
+.nb-c-banner__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--nb-spacing-sm);
+	margin-top: var(--nb-spacing-xs);
+}
+
+/* -------------------------------------------------------------------------
+   Breadcrumb
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner__breadcrumb {
+	margin-bottom: var(--nb-spacing-xs);
+	font-size: var(--nb-font-size-sm);
+}
+
+.nb-c-banner__breadcrumb-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nb-c-banner__breadcrumb-item {
+	display: inline-flex;
+	align-items: center;
+	color: var(--nb-color-text-muted);
+}
+
+.nb-c-banner__breadcrumb-item:not(:last-child)::after {
+	content: '/';
+	margin-inline-start: 0.35rem;
+	color: var(--nb-color-border);
+}
+
+.nb-c-banner__breadcrumb-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.nb-c-banner__breadcrumb-link:hover,
+.nb-c-banner__breadcrumb-link:focus-visible {
+	color: var(--nb-color-accent);
+	text-decoration: underline;
+}
+
+.nb-c-banner__breadcrumb-current {
+	color: var(--nb-color-text);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+/* -------------------------------------------------------------------------
+   Dismiss
+   ------------------------------------------------------------------------- */
+
+.nb-c-banner__dismiss {
+	position: absolute;
+	top: var(--nb-spacing-sm);
+	right: var(--nb-spacing-sm);
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	padding: 0;
+	border: 0;
+	border-radius: var(--nb-radius-md);
+	background-color: var(--nb-color-background);
+	color: var(--nb-color-text);
+	font-size: var(--nb-font-size-lg);
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+}
+
+.nb-c-banner__dismiss:hover,
+.nb-c-banner__dismiss:focus-visible {
+	outline: 2px solid var(--nb-color-accent);
+	outline-offset: 2px;
+}
+
+.nb-c-banner.is-dismissed {
+	display: none;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 47.98rem) {
+	.nb-c-banner__heading {
+		font-size: var(--nb-font-size-xl);
+	}
+
+	.nb-c-banner__actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.nb-c-banner__actions .nb-c-button {
+		width: 100%;
+	}
+
+	.nb-c-banner--align-center .nb-c-banner__actions,
+	.nb-c-banner--align-right .nb-c-banner__actions {
+		align-items: stretch;
+	}
+}
+
+@media (min-width: 48rem) {
+	.nb-c-banner__heading {
+		font-size: clamp(var(--nb-font-size-xl), 3vw, var(--nb-font-size-2xl));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nb-c-banner__media {
+		background-attachment: scroll;
+	}
+}

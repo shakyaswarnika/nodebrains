@@ -1,0 +1,47 @@
+/**
+ * Card component styles.
+ *
+ * @package NodeBrains
+ */
+
+.nb-c-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-lg);
+	background-color: var(--nb-color-background);
+
+	&--variant-elevated {
+		border-color: transparent;
+		box-shadow: 0 1px 3px rgb(0 0 0 / 8%), 0 8px 24px rgb(0 0 0 / 6%);
+	}
+
+	&__media {
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__header,
+	&__body,
+	&__footer {
+		padding: var(--nb-spacing-md);
+	}
+
+	&__header + &__body,
+	&__body + &__footer {
+		padding-top: 0;
+	}
+
+	&__header {
+		padding-bottom: var(--nb-spacing-sm);
+	}
+
+	&__footer {
+		border-top: 1px solid var(--nb-color-border);
+		padding-top: var(--nb-spacing-sm);
+	}
+}
