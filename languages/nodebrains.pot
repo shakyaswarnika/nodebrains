@@ -1,0 +1,59 @@
+# Project-ID-Version: NodeBrains 1.0.0
+# Report-Msgid-Bugs-To: https://nodebrains.com
+# POT-Creation-Date: 2026-06-30 00:00+0000
+# MIME-Version: 1.0
+# Content-Type: text/plain; charset=UTF-8
+# Content-Transfer-Encoding: 8bit
+# X-Domain: nodebrains
+#. Theme Name of the theme
+msgid "NodeBrains"
+msgstr ""
+
+#: inc/menus.php
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/menus.php
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/sidebars.php
+msgid "Main Sidebar"
+msgstr ""
+
+#: inc/sidebars.php
+msgid "Footer Widget Area"
+msgstr ""
+
+#: header.php
+msgid "Skip to content"
+msgstr ""
+
+#: template-parts/content/content-none.php
+msgid "Nothing Found"
+msgstr ""
+
+#: 404.php
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: searchform.php
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php
+msgid "Search"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer.php
+#, php-format
+msgid "© %s NodeBrains. All rights reserved."
+msgstr ""

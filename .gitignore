@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+dist/
+build/
+
+# Test coverage
+coverage/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# IDE & editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs & caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.parcel-cache/
+
+# Composer (if used later)
+composer.lock
+
+# Optional: keep package-lock if you add npm later
+# package-lock.json

@@ -1,0 +1,40 @@
+/**
+ * Block editor styles.
+ *
+ * @package NodeBrains
+ */
+
+:root {
+	--nb-color-text: #1a1a1a;
+	--nb-color-background: #ffffff;
+	--nb-color-accent: #2563eb;
+	--nb-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	--nb-container-width: 72rem;
+}
+
+body {
+	font-family: var(--nb-font-sans);
+	line-height: 1.6;
+	color: var(--nb-color-text);
+}
+
+.editor-styles-wrapper {
+	font-family: var(--nb-font-sans);
+	color: var(--nb-color-text);
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: var(--nb-container-width);
+}
+
+.editor-styles-wrapper .alignwide {
+	max-width: var(--nb-container-width);
+}
+
+.editor-styles-wrapper .alignfull {
+	max-width: none;
+}
+
+.editor-styles-wrapper a {
+	color: var(--nb-color-accent);
+}
