@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "jquery": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "script"
+  },
+  "globals": {
+    "wp": "readonly",
+    "jQuery": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "warn"
+  },
+  "ignorePatterns": ["node_modules/", "vendor/", "build/", "dist/", "coverage/", "apps/"],
+  "overrides": [
+    {
+      "files": ["scripts/**/*.js", "*.config.js", "tailwind.config.js"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

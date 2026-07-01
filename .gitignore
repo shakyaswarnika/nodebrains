@@ -33,8 +33,8 @@ yarn-error.log*
 .cache/
 .parcel-cache/
 
-# Composer (if used later)
-composer.lock
+# PHPCS baseline (optional — uncomment if using generated baseline)
+# phpcs-baseline.xml
 
-# Optional: keep package-lock if you add npm later
-# package-lock.json
+# Local Composer phar (use global composer or CI)
+composer.phar

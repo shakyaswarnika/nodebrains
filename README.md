@@ -1,207 +1,127 @@
-# NodeBrains WordPress Theme
+# NodeBrains
 
-A lightweight, modular, high-performance custom WordPress theme designed as the foundation for a proprietary visual page builder integration.
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](LICENSE)
+[![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4)](https://php.net/)
+[![WordPress](https://img.shields.io/badge/WordPress-6.7%2B-21759B)](https://wordpress.org/)
 
-**Version:** 1.0.0  
-**Author:** Swarnika Shakya  
-**Requires PHP:** 8.2+  
-**Requires WordPress:** 6.7+  
-**License:** GPL-2.0-or-later
+A lightweight, modular, high-performance **WordPress theme** designed as the foundation for a proprietary **Visual Page Builder** (React, TypeScript, Next.js).
 
----
-
-## Overview
-
-NodeBrains is a classic PHP-based WordPress theme built with extensibility in mind. It follows WordPress Coding Standards, separates logic from presentation, and provides a clean architecture for future custom builder development.
-
-This theme does **not** depend on Elementor or any third-party page builder.
+**Author:** Swarnika Shakya · **Website:** [nodebrains.com](https://nodebrains.com) · **Repository:** [github.com/shakyaswarnika/nodebrains](https://github.com/shakyaswarnika/nodebrains)
 
 ---
 
-## Installation
+## Features
 
-1. Copy the `nodebrains` folder into your WordPress installation:
-   ```
-   wp-content/themes/nodebrains/
-   ```
-2. Log in to the WordPress admin dashboard.
-3. Navigate to **Appearance → Themes**.
-4. Activate **NodeBrains**.
-
-### Local development (XAMPP)
-
-If this project lives at `htdocs/nodebrains/`, the theme path is:
-
-```
-htdocs/nodebrains/wp-content/themes/nodebrains/
-```
-
-Ensure Apache and MySQL are running, then visit your local site URL and activate the theme.
-
----
-
-## Folder Structure
-
-```
-nodebrains/
-├── assets/
-│   ├── css/          # Front-end stylesheets (main.css)
-│   ├── js/           # Front-end scripts (main.js)
-│   ├── images/       # Theme images
-│   └── fonts/        # Web fonts
-├── inc/
-│   ├── constants.php         # Theme path, URI, and version constants
-│   ├── setup.php             # Theme bootstrap and text domain
-│   ├── theme-support.php     # add_theme_support() registrations
-│   ├── enqueue.php           # Script and style enqueuing
-│   ├── menus.php             # Navigation menu locations
-│   ├── sidebars.php          # Widget areas
-│   ├── helpers.php           # Shared utility functions
-│   ├── customizer.php        # Theme Customizer settings
-│   ├── template-functions.php# Template output helpers
-│   └── builder/              # Visual page builder scaffolding
-│       ├── bootstrap.php     # Builder init hook
-│       └── registry.php      # Future module registry
-├── builder/                  # Future builder modules and assets
-│   └── modules/
-├── template-parts/
-│   ├── header/               # Header partials
-│   ├── footer/               # Footer partials
-│   └── content/              # Loop content partials
-├── patterns/                 # Future block patterns
-├── parts/                    # Future block template parts
-├── templates/                # Custom page templates
-│   └── full-width.php        # Full-width page layout
-├── languages/                # Translation files (.pot, .po, .mo)
-├── styles/                   # Block editor styles
-├── theme.json                # Block editor design tokens
-├── readme.txt                # WordPress.org readme
-├── searchform.php            # Accessible search form
-├── functions.php             # Loads inc/ modules only
-├── style.css         # Theme header (required by WordPress)
-├── index.php         # Main fallback template
-├── header.php        # Document head and site header
-├── footer.php        # Site footer and closing markup
-├── sidebar.php       # Main sidebar widget area
-├── comments.php      # Comments template
-├── search.php        # Search results
-├── 404.php           # Not found template
-├── archive.php       # Archive pages
-├── single.php        # Single post template
-├── page.php          # Page template
-├── front-page.php    # Static front page
-├── home.php          # Blog posts index
-└── screenshot.png    # Theme screenshot for admin
-```
-
----
-
-## Theme Features
-
-### Registered Theme Support
-
-- Title tag
-- Post thumbnails
-- Automatic feed links
-- Custom logo
-- Custom background
-- HTML5 markup
-- Custom header
-- Responsive embeds
-- Editor styles
-- Wide block alignment
-- Core block styles
-
-### Navigation Menus
-
-| Location  | Description        |
-|-----------|--------------------|
-| `primary` | Main site navigation |
-| `footer`  | Footer navigation  |
-
-### Widget Areas
-
-| ID               | Name               |
-|------------------|--------------------|
-| `main-sidebar`   | Main Sidebar       |
-| `footer-widgets` | Footer Widget Area |
-
-### Customizer
-
-- **Footer → Copyright Text** — editable site copyright notice
-
----
-
-## Development Workflow
-
-### 1. Keep `functions.php` lean
-
-All theme logic belongs in `/inc`. Only require modules from `functions.php`.
-
-### 2. Separate logic from templates
-
-- Use `/inc` for hooks, registrations, and reusable logic.
-- Use `/template-parts` for reusable markup fragments.
-- Keep root template files focused on structure and the WordPress Loop.
-
-### 3. Asset versioning
-
-Styles and scripts are versioned with `filemtime()` for cache busting during development. Edit files in:
-
-- `assets/css/main.css`
-- `assets/js/main.js`
-
-### 4. Namespaces
-
-PHP modules under `/inc` use the `NodeBrains` namespace to avoid global function collisions. Template files call namespaced functions explicitly.
-
-### 5. Coding standards
-
-Follow [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/):
-
-- Escape all output (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`).
-- Sanitize all inputs in Customizer and admin callbacks.
-- Use PHPDoc blocks on functions and files.
-- Prefix handles and settings with `nodebrains`.
-
-### 6. Internationalization
-
-All user-facing strings use the `nodebrains` text domain. Place translation files in `/languages`.
-
-Generate a POT file (requires WP-CLI):
-
-```bash
-wp i18n make-pot wp-content/themes/nodebrains wp-content/themes/nodebrains/languages/nodebrains.pot
-```
-
-### 7. Future extension points
-
-The following are intentionally reserved for later development:
-
-- `/builder/modules/` — visual builder elements and widgets
-- `/inc/builder/registry.php` — module registration API
-- `/patterns/` — block patterns
-- `/parts/` — block template parts
-- `nodebrains_builder_init` action — builder bootstrap hook
-
----
+- Classic PHP theme with namespaced `/inc` architecture
+- Block editor support via `theme.json`
+- Customizer integration with live preview
+- Builder scaffolding for future React/Next.js UI
+- Enterprise dev tooling (Composer, ESLint, Prettier, Husky, CI/CD)
+- No Elementor or third-party page builder dependencies
 
 ## Requirements
 
-| Requirement | Version |
-|-------------|---------|
-| PHP         | 8.2+    |
-| WordPress   | 6.7+    |
+| Requirement | Version           |
+| ----------- | ----------------- |
+| PHP         | 8.2+              |
+| WordPress   | 6.7+              |
+| Node.js     | 20+ (development) |
+| Composer    | 2.x (development) |
 
----
+## Quick Start
+
+### WordPress Installation
+
+1. Copy or clone into `wp-content/themes/nodebrains/`
+2. Activate **NodeBrains** under **Appearance → Themes**
+
+### Development Setup
+
+```bash
+composer install
+npm install
+npm run check
+```
+
+See [docs/development/setup.md](docs/development/setup.md) for detailed environment configuration.
+
+## Project Structure
+
+```
+nodebrains/
+├── .github/workflows/     # CI/CD pipelines
+├── .husky/                # Git hooks
+├── apps/builder/          # Future Next.js builder app
+├── assets/                # Front-end CSS/JS/images
+├── builder/               # Future PHP builder modules
+├── docs/                  # Project documentation
+├── inc/                   # Theme PHP logic (namespaced)
+├── scripts/               # Build & utility scripts
+├── template-parts/        # Reusable template fragments
+├── templates/             # Custom page templates
+├── composer.json          # PHP dev dependencies
+├── package.json           # Node dev dependencies
+├── phpcs.xml              # WordPress Coding Standards config
+├── theme.json             # Block editor design tokens
+└── style.css              # Theme header (required by WP)
+```
+
+## Development Commands
+
+| Command                     | Description                  |
+| --------------------------- | ---------------------------- |
+| `npm run lint`              | ESLint + PHPCS               |
+| `npm run format`            | Prettier (write)             |
+| `npm run format:check`      | Prettier (check only)        |
+| `npm run build`             | Build pipeline (placeholder) |
+| `npm run test`              | Test suite (placeholder)     |
+| `npm run check`             | Full quality gate            |
+| `composer run lint:php`     | WordPress Coding Standards   |
+| `composer run lint:php:fix` | Auto-fix PHPCS issues        |
+
+## Git Hooks
+
+Every commit automatically runs:
+
+- **ESLint** + **Prettier** on staged JS/CSS/JSON/MD
+- **PHPCS** on staged PHP files
+- **Commitlint** for Conventional Commits
+
+## CI/CD
+
+GitHub Actions workflows:
+
+| Workflow                         | Purpose                             |
+| -------------------------------- | ----------------------------------- |
+| `php-lint.yml`                   | PHP syntax validation (`php -l`)    |
+| `javascript-lint.yml`            | ESLint on theme JavaScript          |
+| `wordpress-coding-standards.yml` | PHPCS (WPCS + PHPCompatibility)     |
+| `composer-validate.yml`          | `composer.json` integrity           |
+| `node-build.yml`                 | Prettier check + build/test scripts |
+
+## Documentation
+
+| Document                                   | Description             |
+| ------------------------------------------ | ----------------------- |
+| [CHANGELOG.md](CHANGELOG.md)               | Version history         |
+| [CONTRIBUTING.md](CONTRIBUTING.md)         | Contribution guidelines |
+| [ROADMAP.md](ROADMAP.md)                   | Product roadmap         |
+| [SECURITY.md](SECURITY.md)                 | Vulnerability reporting |
+| [docs/architecture/](docs/architecture/)   | System architecture     |
+| [docs/builder/](docs/builder/)             | Visual builder plans    |
+| [docs/design-system/](docs/design-system/) | Design tokens           |
+
+## Roadmap
+
+- **Phase 0** — Project foundation ✅
+- **Phase 1** — Theme hardening & tests
+- **Phase 2** — Builder architecture (Next.js)
+- **Phase 3** — Visual Page Builder MVP
+
+See [ROADMAP.md](ROADMAP.md) for details.
 
 ## License
 
-This theme is licensed under the [GNU General Public License v2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html).
+GPL-2.0-or-later — see [LICENSE](LICENSE).
 
----
-
-## Links
-
-- Theme URI: [https://nodebrains.com](https://nodebrains.com)
-- Author URI: [https://nodebrains.com](https://nodebrains.com)
+WordPress theme header and `readme.txt` are included for WordPress.org compatibility.

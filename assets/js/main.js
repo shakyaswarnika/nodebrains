@@ -4,8 +4,8 @@
  * @package NodeBrains
  */
 
-( function () {
+(function () {
 	'use strict';
 
-	document.documentElement.classList.add( 'js' );
-}() );
+	document.documentElement.classList.add('js');
+})();
