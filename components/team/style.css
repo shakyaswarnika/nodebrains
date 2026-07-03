@@ -1,0 +1,187 @@
+/**
+ * Team component styles.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Section
+   ------------------------------------------------------------------------- */
+
+.nb-c-team {
+	margin-block: var(--nb-spacing-lg);
+}
+
+.nb-c-team__header {
+	margin-bottom: var(--nb-spacing-md);
+	max-width: 48rem;
+}
+
+.nb-c-team--variant-centered .nb-c-team__header {
+	margin-inline: auto;
+	text-align: center;
+}
+
+.nb-c-team__title {
+	margin: 0 0 var(--nb-spacing-xs);
+	font-size: var(--nb-font-size-2xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+	text-wrap: balance;
+}
+
+.nb-c-team__description {
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-relaxed);
+	text-wrap: pretty;
+}
+
+.nb-c-team__description > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-team__description > :last-child {
+	margin-bottom: 0;
+}
+
+.nb-c-team__grid {
+	width: 100%;
+	align-items: stretch;
+}
+
+/* -------------------------------------------------------------------------
+   Variants
+   ------------------------------------------------------------------------- */
+
+.nb-c-team--variant-bordered .nb-c-team-member {
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-lg);
+	padding: var(--nb-spacing-md);
+}
+
+.nb-c-team--variant-centered .nb-c-team-member {
+	align-items: center;
+	text-align: center;
+}
+
+.nb-c-team--variant-centered .nb-c-team-member__social-list {
+	justify-content: center;
+}
+
+/* -------------------------------------------------------------------------
+   Team member
+   ------------------------------------------------------------------------- */
+
+.nb-c-team-member {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	gap: var(--nb-spacing-sm);
+}
+
+.nb-c-team-member__media {
+	display: flex;
+	justify-content: center;
+}
+
+.nb-c-team-member__photo {
+	display: block;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.nb-c-team--variant-bordered .nb-c-team-member__photo {
+	width: 8rem;
+	height: 8rem;
+}
+
+.nb-c-team-member__body {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	gap: var(--nb-spacing-xs);
+}
+
+.nb-c-team-member__name {
+	margin: 0;
+	font-size: var(--nb-font-size-lg);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-semibold);
+}
+
+.nb-c-team-member__position {
+	margin: 0;
+	color: var(--nb-color-accent);
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+.nb-c-team-member__bio {
+	flex: 1 1 auto;
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-relaxed);
+}
+
+.nb-c-team-member__bio > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-team-member__bio > :last-child {
+	margin-bottom: 0;
+}
+
+.nb-c-team-member__social {
+	margin-top: auto;
+}
+
+.nb-c-team-member__social-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--nb-spacing-sm);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nb-c-team-member__social-link {
+	font-size: var(--nb-font-size-sm);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+/* -------------------------------------------------------------------------
+   Equal height
+   ------------------------------------------------------------------------- */
+
+.nb-c-team--equal-height .nb-c-team-member {
+	height: 100%;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 47.98rem) {
+	.nb-c-team__title {
+		font-size: var(--nb-font-size-xl);
+	}
+
+	.nb-c-team-member__name {
+		font-size: var(--nb-font-size-md);
+	}
+
+	.nb-c-team-member__photo {
+		width: 8rem;
+		height: 8rem;
+	}
+}
+
+@media (min-width: 48rem) {
+	.nb-c-team__title {
+		font-size: clamp(var(--nb-font-size-xl), 3vw, var(--nb-font-size-2xl));
+	}
+}

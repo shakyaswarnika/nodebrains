@@ -22,15 +22,24 @@
     "lint:php:syntax": "node scripts/php-syntax-check.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node scripts/test-placeholder.js",
-    "build": "npm run build:styles",
+    "test": "node scripts/test-placeholder.js && npx tsx scripts/test-layout-engine.ts && npx tsx scripts/test-widget-sdk.ts && npx tsx scripts/test-responsive-inheritance.ts",
+    "build": "npm run build:styles && npm run build:builder-admin",
     "build:styles": "sass components/components.scss assets/css/components.css --no-source-map --style=expanded",
+    "build:builder-admin": "node scripts/build-builder-admin.mjs",
+    "builder:dev": "next dev ./apps/builder",
+    "builder:build": "next build ./apps/builder",
+    "builder:start": "next start ./apps/builder",
+    "typecheck:builder:app": "tsc --project apps/builder/tsconfig.json --noEmit",
+    "typecheck:builder": "tsc --project builder/tsconfig.json --noEmit",
     "check": "npm run lint && npm run format:check && php composer.phar validate --strict",
     "commitlint": "commitlint --edit"
   },
   "lint-staged": {
-    "*.js": [
+    "{assets/js,scripts}/**/*.js": [
       "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.js": [
       "prettier --write"
     ],
     "*.{json,md,css,yml,yaml}": [
@@ -43,7 +52,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
+    "@tailwindcss/postcss": "^4.3.2",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.12",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
@@ -53,5 +64,14 @@
     "sass": "^1.101.0",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zustand": "^5.0.14"
   }
 }

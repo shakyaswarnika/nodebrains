@@ -1,0 +1,259 @@
+/**
+ * Contact component styles.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Section
+   ------------------------------------------------------------------------- */
+
+.nb-c-contact {
+	margin-block: var(--nb-spacing-lg);
+}
+
+.nb-c-contact__header {
+	margin-bottom: var(--nb-spacing-md);
+	max-width: 48rem;
+}
+
+.nb-c-contact__title {
+	margin: 0 0 var(--nb-spacing-xs);
+	font-size: var(--nb-font-size-2xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+	text-wrap: balance;
+}
+
+.nb-c-contact__description {
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-relaxed);
+	text-wrap: pretty;
+}
+
+.nb-c-contact__description > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-contact__description > :last-child {
+	margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Layout
+   ------------------------------------------------------------------------- */
+
+.nb-c-contact__layout {
+	display: grid;
+	gap: var(--nb-spacing-lg);
+}
+
+.nb-c-contact--layout-split .nb-c-contact__layout {
+	grid-template-columns: 1fr;
+}
+
+.nb-c-contact__aside,
+.nb-c-contact__main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--nb-spacing-md);
+}
+
+.nb-c-contact__main {
+	min-width: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Contact info
+   ------------------------------------------------------------------------- */
+
+.nb-c-contact__info {
+	display: grid;
+	gap: var(--nb-spacing-sm);
+	margin: 0;
+}
+
+.nb-c-contact__info-item {
+	margin: 0;
+}
+
+.nb-c-contact__info-label {
+	margin: 0 0 0.125rem;
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-xs);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.nb-c-contact__info-value {
+	margin: 0;
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-relaxed);
+}
+
+.nb-c-contact__info-address {
+	font-style: normal;
+}
+
+.nb-c-contact__info-link {
+	color: var(--nb-color-text);
+	text-decoration: none;
+}
+
+.nb-c-contact__info-link:hover,
+.nb-c-contact__info-link:focus-visible {
+	color: var(--nb-color-accent);
+	text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------
+   Social links
+   ------------------------------------------------------------------------- */
+
+.nb-c-contact__social-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--nb-spacing-sm);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nb-c-contact__social-link {
+	font-size: var(--nb-font-size-sm);
+	font-weight: var(--nb-font-weight-medium);
+}
+
+/* -------------------------------------------------------------------------
+   Form & map regions
+   ------------------------------------------------------------------------- */
+
+.nb-c-contact__form,
+.nb-c-contact__map {
+	display: flex;
+	flex-direction: column;
+	gap: var(--nb-spacing-sm);
+}
+
+.nb-c-contact__form-title,
+.nb-c-contact__map-title {
+	margin: 0;
+	font-size: var(--nb-font-size-lg);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-semibold);
+}
+
+.nb-c-contact__form-content > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-contact__form-content > :last-child {
+	margin-bottom: 0;
+}
+
+.nb-c-contact__form-placeholder,
+.nb-c-contact__map-placeholder {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: var(--nb-spacing-sm);
+	min-height: 12rem;
+	padding: var(--nb-spacing-md);
+	border: 1px dashed var(--nb-color-border);
+	border-radius: var(--nb-radius-md);
+	background-color: var(--nb-color-surface);
+	color: var(--nb-color-text-muted);
+}
+
+.nb-c-contact__form-placeholder-text,
+.nb-c-contact__map-placeholder-text {
+	margin: 0;
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-relaxed);
+}
+
+.nb-c-contact__map-load {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--nb-spacing-xs) var(--nb-spacing-md);
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-md);
+	background-color: var(--nb-color-background);
+	color: var(--nb-color-text);
+	font: inherit;
+	font-size: var(--nb-font-size-sm);
+	font-weight: var(--nb-font-weight-medium);
+	cursor: pointer;
+}
+
+.nb-c-contact__map-load:hover,
+.nb-c-contact__map-load:focus-visible {
+	border-color: var(--nb-color-accent);
+	color: var(--nb-color-accent);
+	outline: 2px solid var(--nb-color-accent);
+	outline-offset: 2px;
+}
+
+.nb-c-contact__map-frame-wrap {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--nb-radius-md);
+}
+
+.nb-c-contact__map-embed {
+	display: block;
+	width: 100%;
+	min-height: 16rem;
+	border: 0;
+}
+
+.nb-c-contact__map-embed iframe {
+	display: block;
+	width: 100%;
+	min-height: 16rem;
+	border: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Variants
+   ------------------------------------------------------------------------- */
+
+.nb-c-contact--variant-bordered .nb-c-contact__aside,
+.nb-c-contact--variant-bordered .nb-c-contact__form,
+.nb-c-contact--variant-bordered .nb-c-contact__map {
+	padding: var(--nb-spacing-md);
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-lg);
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 47.98rem) {
+	.nb-c-contact__title {
+		font-size: var(--nb-font-size-xl);
+	}
+}
+
+@media (min-width: 48rem) {
+	.nb-c-contact__title {
+		font-size: clamp(var(--nb-font-size-xl), 3vw, var(--nb-font-size-2xl));
+	}
+
+	.nb-c-contact--layout-split .nb-c-contact__layout {
+		grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr);
+		align-items: start;
+	}
+}
+
+@media (min-width: 62rem) {
+	.nb-c-contact--layout-split .nb-c-contact__layout {
+		grid-template-columns: minmax(18rem, 1fr) minmax(0, 2.5fr);
+	}
+}

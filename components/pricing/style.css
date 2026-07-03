@@ -1,0 +1,201 @@
+/**
+ * Pricing component styles.
+ *
+ * @package NodeBrains
+ */
+
+/* -------------------------------------------------------------------------
+   Section
+   ------------------------------------------------------------------------- */
+
+.nb-c-pricing {
+	margin-block: var(--nb-spacing-lg);
+}
+
+.nb-c-pricing__header {
+	margin-bottom: var(--nb-spacing-md);
+	max-width: 48rem;
+	text-align: center;
+	margin-inline: auto;
+}
+
+.nb-c-pricing__title {
+	margin: 0 0 var(--nb-spacing-xs);
+	font-size: var(--nb-font-size-2xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+	text-wrap: balance;
+}
+
+.nb-c-pricing__description {
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-base);
+	line-height: var(--nb-line-height-relaxed);
+	text-wrap: pretty;
+}
+
+.nb-c-pricing__description > :first-child {
+	margin-top: 0;
+}
+
+.nb-c-pricing__description > :last-child {
+	margin-bottom: 0;
+}
+
+.nb-c-pricing__grid {
+	width: 100%;
+	align-items: stretch;
+}
+
+/* -------------------------------------------------------------------------
+   Plan card
+   ------------------------------------------------------------------------- */
+
+.nb-c-pricing-plan {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	border: 1px solid var(--nb-color-border);
+	border-radius: var(--nb-radius-lg);
+	background-color: var(--nb-color-background);
+	color: var(--nb-color-text);
+	overflow: hidden;
+}
+
+.nb-c-pricing--variant-bordered .nb-c-pricing-plan {
+	border-width: 2px;
+}
+
+.nb-c-pricing--variant-elevated .nb-c-pricing-plan {
+	border-color: transparent;
+	box-shadow:
+		0 1px 3px rgb(0 0 0 / 8%),
+		0 6px 20px rgb(0 0 0 / 6%);
+}
+
+.nb-c-pricing-plan--featured {
+	border-color: var(--nb-color-accent);
+	box-shadow:
+		0 0 0 1px var(--nb-color-accent),
+		0 8px 24px rgb(0 0 0 / 8%);
+}
+
+.nb-c-pricing-plan__badge-wrap {
+	position: absolute;
+	top: var(--nb-spacing-sm);
+	right: var(--nb-spacing-sm);
+	z-index: 1;
+}
+
+.nb-c-pricing-plan__header {
+	padding: var(--nb-spacing-md) var(--nb-spacing-md) var(--nb-spacing-sm);
+	text-align: center;
+}
+
+.nb-c-pricing-plan--has-badge .nb-c-pricing-plan__header {
+	padding-top: calc(var(--nb-spacing-md) + var(--nb-spacing-sm));
+}
+
+.nb-c-pricing-plan__name {
+	margin: 0 0 var(--nb-spacing-xs);
+	font-size: var(--nb-font-size-lg);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-semibold);
+}
+
+.nb-c-pricing-plan__price {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: center;
+	gap: 0.25rem;
+	margin: 0;
+}
+
+.nb-c-pricing-plan__amount {
+	font-size: var(--nb-font-size-3xl);
+	line-height: var(--nb-line-height-tight);
+	font-weight: var(--nb-font-weight-bold);
+}
+
+.nb-c-pricing-plan__cycle {
+	color: var(--nb-color-text-muted);
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-tight);
+}
+
+.nb-c-pricing-plan__body {
+	flex: 1 1 auto;
+	padding: 0 var(--nb-spacing-md);
+}
+
+.nb-c-pricing-plan__features {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nb-c-pricing-plan__feature {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--nb-spacing-xs);
+	padding-block: var(--nb-spacing-xs);
+	border-top: 1px solid var(--nb-color-border);
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-relaxed);
+}
+
+.nb-c-pricing-plan__feature:first-child {
+	border-top: 0;
+}
+
+.nb-c-pricing-plan__feature-icon {
+	flex-shrink: 0;
+	color: var(--nb-color-accent);
+	font-size: var(--nb-font-size-sm);
+	line-height: var(--nb-line-height-relaxed);
+}
+
+.nb-c-pricing-plan__feature-text {
+	flex: 1 1 auto;
+}
+
+.nb-c-pricing-plan__footer {
+	margin-top: auto;
+	padding: var(--nb-spacing-md);
+}
+
+/* -------------------------------------------------------------------------
+   Equal height
+   ------------------------------------------------------------------------- */
+
+.nb-c-pricing--equal-height .nb-c-pricing-plan {
+	height: 100%;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 47.98rem) {
+	.nb-c-pricing__title {
+		font-size: var(--nb-font-size-xl);
+	}
+
+	.nb-c-pricing-plan__amount {
+		font-size: var(--nb-font-size-2xl);
+	}
+
+	.nb-c-pricing-plan__header,
+	.nb-c-pricing-plan__body,
+	.nb-c-pricing-plan__footer {
+		padding-inline: var(--nb-spacing-sm);
+	}
+}
+
+@media (min-width: 48rem) {
+	.nb-c-pricing__title {
+		font-size: clamp(var(--nb-font-size-xl), 3vw, var(--nb-font-size-2xl));
+	}
+}

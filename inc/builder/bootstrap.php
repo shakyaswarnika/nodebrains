@@ -32,6 +32,10 @@ function bootstrap(): void {
  */
 function register_builder_hooks(): void {
 	require_once NODEBRAINS_PATH . '/inc/builder/registry.php';
+	require_once NODEBRAINS_PATH . '/inc/admin/builder/class-access.php';
+	require_once NODEBRAINS_PATH . '/inc/builder/admin/class-admin-bar.php';
+
+	Admin\Admin_Bar::register();
 
 	/**
 	 * Fires when the NodeBrains visual builder should register modules.

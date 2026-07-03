@@ -28,53 +28,85 @@ $registered_components = null;
  */
 function get_default_registry(): array {
 	return array(
-		'button'      => array(
+		'button'       => array(
 			'script' => null,
 		),
-		'heading'     => array(
+		'heading'      => array(
 			'script' => null,
 		),
-		'link'        => array(
+		'link'         => array(
 			'script' => null,
 		),
-		'badge'       => array(
+		'badge'        => array(
 			'script' => null,
 		),
-		'card'        => array(
+		'card'         => array(
 			'script' => null,
 		),
-		'media'       => array(
+		'media'        => array(
 			'script' => null,
 		),
-		'alert'       => array(
+		'alert'        => array(
 			'script' => 'alert.js',
 		),
-		'nav'         => array(
+		'nav'          => array(
 			'script' => 'nav.js',
 		),
-		'skip-link'   => array(
+		'skip-link'    => array(
 			'script' => null,
 		),
-		'search-form' => array(
+		'search-form'  => array(
 			'script' => null,
 		),
-		'hero'        => array(
+		'hero'         => array(
 			'style'  => 'style.css',
 			'script' => null,
 		),
-		'banner'      => array(
+		'banner'       => array(
 			'style'  => 'style.css',
 			'script' => 'script.js',
 		),
-		'cta'         => array(
+		'cta'          => array(
 			'style'  => 'style.css',
 			'script' => 'script.js',
 		),
-		'cards'       => array(
+		'cards'        => array(
 			'style'  => 'style.css',
 			'script' => 'script.js',
 		),
-		'services'    => array(
+		'services'     => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'features'     => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'faq'          => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'testimonials' => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'pricing'      => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'blog-card'    => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'team'         => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'contact'      => array(
+			'style'  => 'style.css',
+			'script' => 'script.js',
+		),
+		'footer'       => array(
 			'style'  => 'style.css',
 			'script' => 'script.js',
 		),

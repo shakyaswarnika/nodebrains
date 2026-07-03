@@ -35,6 +35,11 @@ function configure_theme(): void {
 
 	\NodeBrains\ThemeSupport\register();
 
+	$admin_bootstrap = NODEBRAINS_PATH . '/inc/admin/bootstrap.php';
+	if ( is_readable( $admin_bootstrap ) ) {
+		require $admin_bootstrap;
+	}
+
 	$builder_bootstrap = NODEBRAINS_PATH . '/inc/builder/bootstrap.php';
 	if ( is_readable( $builder_bootstrap ) ) {
 		require $builder_bootstrap;
